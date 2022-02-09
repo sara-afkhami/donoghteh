@@ -1,3 +1,130 @@
+@font-face {
+  font-family: openSans;
+  src: url('../fonts/fonts/open-sans/OpenSans-Bold.ttf');
+}
+
+
+.header-btn{
+  background-color: #F57365;
+  height: 30px;
+  width:100px;
+  color: #fff;
+  border: 0px;
+  border-radius: 20px;
+}
+/* .logo{
+display: flex;
+flex-direction: row;
+justfy-contact: space-evenly;
+width: 100vw;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'segoe ui';
+}
+
+.logo{
+  display: inline-block;
+}
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #041340;
+  padding-left: 8%;
+  padding-right: 8%;
+  /* position: relative; */
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+.nav-link.end{
+  margin-right: 150px;
+}
+
+@media (max-width:1500px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: transparent;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #041340;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
 body,
 html {
   font-family: "Open Sans", sans-serif;
@@ -76,9 +203,9 @@ hr {
   transition: all 0.8s;
 }
 #menu.navbar-default {
-  background-color: #fff;
+  background-color: transparent;
   border-color: rgba(231, 231, 231, 0);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
 }
 #menu a.navbar-brand {
   font-family: "Raleway", sans-serif;
@@ -104,7 +231,7 @@ hr {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  /* background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); */
   content: "";
   transition: width 0.2s;
 }
@@ -114,7 +241,7 @@ hr {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 .navbar-default .navbar-nav > .active > a:after,
 .navbar-default .navbar-nav > .active > a:hover:after,
@@ -205,25 +332,25 @@ a:focus,
 }
 /* Header Section */
 .intro {
-  display: table;
+  
+  /* height: 100vh; */
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
+  background: url(../img/intro-bg.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
+  background-size: contain;
   -o-background-size: cover;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 }
 .intro h1 {
-  font-family: "Raleway", sans-serif;
-  color: #fff;
+  font-family: openSans;
+  color: #B3DAC6;
   font-size: 82px;
   font-weight: 700;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -237,12 +364,14 @@ a:focus,
   font-weight: 300;
   line-height: 30px;
   margin: 0 auto;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
 }
 header .intro-text {
+  padding-left: 8%;
+  padding-right: 8%;
   padding-top: 350px;
   padding-bottom: 200px;
-  text-align: center;
+  text-align: left;
 }
 /* Features Section */
 #features {
