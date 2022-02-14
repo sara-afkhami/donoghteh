@@ -1,7 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
-import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -59,7 +59,34 @@ const theme = createTheme({
     },
   }
 });
-const tabStyle = { default_tab:{ color: "#68C222", width: "33.3%", backgroundColor: "#FFFFFF", fontSize: 15 } };
+
+const AntTab = styled((props) => <Tab {...props} />)(
+  ({ theme }) => ({
+    textTransform: "none",
+    minWidth: 0,
+    [theme.breakpoints.up("sm")]: {
+      minWidth: 0
+    },
+    fontWeight: theme.typography.fontWeightRegular,
+    marginRight: theme.spacing(1),
+    color: "#B3DAC6",
+    fontFamily: [
+      
+    ].join(","),
+    "&:hover": {
+      color: "#c14f42",
+      opacity: 1
+    },
+    "&.Mui-selected": {
+      color: "#F57365",
+      fontWeight: theme.typography.fontWeightMedium
+    },
+    "&.Mui-focusVisible": {
+      backgroundColor: "#d1eaff"
+    }
+  })
+);
+
 const Gallery = () => {
 
   const [value, setValue] = React.useState(0);
@@ -87,12 +114,10 @@ const Gallery = () => {
           textColor="secondary"
           variant="fullWidth"
           aria-label="full width tabs example"
-
-          style={tabStyle}
         >
-          <Tab className="main-tab" label={<span className= "main-tab" style={{ color: 'white', fontFamily:'museo500' }}>Item One</span>} {...a11yProps(0)} />
-          <Tab className="main-tab" label={<span className= "main-tab">Item Two</span>} {...a11yProps(1)} />
-          <Tab className="main-tab" label={<span className= "main-tab">Item Three</span>} {...a11yProps(2)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Item One</span>} {...a11yProps(0)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Item Two</span>} {...a11yProps(1)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Item Three</span>} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
