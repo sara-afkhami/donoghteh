@@ -7,6 +7,9 @@ const HeaderLink = ({ page }) => {
   if (page === "header") {
     return  <Link to={"/"} className="nav-link">{title}</Link>;
   }
+  else if (page === "gallery") {
+    return  <Link to={`/${page}`} className="nav-link last-link">{title}</Link>;
+  }
   else return <Link to={`/${page}`} className="nav-link">{title}</Link>;
 
 };
@@ -29,8 +32,8 @@ const Header = (props) => {
   </div>
   
   <div className="nav-links">
-    <HeaderLink className="nav-link" page='header'/>
-    <HeaderLink className="nav-link" page='gallery'/>
+    <HeaderLink page='header'/>
+    <HeaderLink page='gallery'/>
     <button className="header-btn">contact us</button>
   </div>
 </div>

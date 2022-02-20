@@ -46,7 +46,7 @@ function a11yProps(index) {
 }
 
 
-const BasicRows = () => <PhotoGallery photos={photos} />;
+const BasicRows = () => <PhotoGallery photos={photos} /> ;
 
 const theme = createTheme({
   palette: {
@@ -115,9 +115,9 @@ const Gallery = () => {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <AntTab className="main-tab" label={<span className= "main-tab">Item One</span>} {...a11yProps(0)} />
-          <AntTab className="main-tab" label={<span className= "main-tab">Item Two</span>} {...a11yProps(1)} />
-          <AntTab className="main-tab" label={<span className= "main-tab">Item Three</span>} {...a11yProps(2)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Visual Branding</span>} {...a11yProps(0)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Animation & Motion</span>} {...a11yProps(1)} />
+          <AntTab className="main-tab" label={<span className= "main-tab">Teaser & Video</span>} {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -125,7 +125,7 @@ const Gallery = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} >
-          <BasicRows/>
+          <div className="tab-div"><BasicRows/></div>
         </TabPanel>
         <TabPanel value={value} index={1} >
           Item Two
