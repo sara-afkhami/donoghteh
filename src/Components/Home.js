@@ -1,7 +1,7 @@
 const Home = (props) => {
 return(
 
-<header id='header'>
+
       <div className='intro'>
         <div className='overlay'>
           <div className=''>
@@ -9,7 +9,7 @@ return(
             {/* <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
               <source src="" type="video/mp4">
             </video> */}
-              <div className='col-md-8 intro-text'>
+              <div className='col-md-8 intro-text main'>
                 <h1>
                   {props.data ? props.data.title : 'Loading'}
                   <span></span>
@@ -22,7 +22,7 @@ return(
           </div>
         </div>
       </div>
-    </header>    
+  
 
   );}
   export default Home;

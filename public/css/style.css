@@ -1,16 +1,103 @@
-@font-face {
-  font-family: openSans;
-  src: url('../fonts/fonts/open-sans/OpenSans-Bold.ttf');
+.app{
+  background: url(../img/intro-bg.png);
+  background-repeat: repeat-x;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  background-size: auto;
+  -o-background-size: auto;
 }
 
+.fa {
+  padding: 8px;
+  font-size: 25px;
+  width: 40px !important;
+  height: 40px !important;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 10px;
+  border-radius: 50%;
+  color: #b3dac6;
+  background-color: #32416a;
+}
 
-.header-btn{
-  background-color: #F57365;
+.fa:hover {
+  opacity: 0.7;
+}
+
+.social-media {
+  display: flex;
+  justfy-content: center;
+}
+
+.send-massage-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-top: 120px !important;
+  text-decoration: line-through;
+}
+.contact-us {
+  width: 100%;
+  display: flex;
+  justfy-content: center;
+  text-align: center;
+}
+.space.c {
+  text-align: center;
+}
+.contact-us h1 {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+.send-massage-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  /* margin: auto 510px !important; */
+  top: 300px;
+}
+.send-massage-body {
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  justfy-content: space-between;
+}
+.btns button {
+  font-size: 60px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.btns button:hover {
+  color: #b3dac6;
+}
+.btn1{
+  margin-left: 250px;
+}
+
+@font-face {
+  font-family: openSans;
+  src: url("../fonts/fonts/open-sans/OpenSans-Bold.ttf");
+}
+
+.header-btn {
+  background-color: #f57365;
   height: 30px;
-  width:100px;
-  color: #fff;
+  width: 100px;
+  color: #000;
   border: 0px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 /* .logo{
 display: flex;
@@ -24,20 +111,21 @@ width: 100vw;
 }
 
 body {
-  font-family: 'segoe ui';
+  font-family: "segoe ui";
+  background-color: #041340;
 }
 
-.logo{
+.logo {
   display: inline-block;
 }
 .nav {
   height: 50px;
   width: 100%;
-  background-color: #041340;
+  background-color: transparent;
   padding-left: 8%;
   padding-right: 8%;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   /* position: relative; */
 }
 
@@ -77,14 +165,14 @@ body {
   display: none;
 }
 
-.nav-link.end{
+.nav-link.end {
   margin-right: 150px;
 }
-.nav-link.last-link{
-  margin-right:32vw;
+.nav-link.last-link {
+  margin-right: 27vw;
 }
 
-@media (max-width:1500px) {
+@media (max-width: 1500px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -97,7 +185,8 @@ body {
     height: 50px;
     padding: 13px;
   }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+  .nav > .nav-btn > label:hover,
+  .nav #nav-check:checked ~ .nav-btn > label {
     background-color: transparent;
   }
   .nav > .nav-btn > label > span {
@@ -128,24 +217,24 @@ body {
     overflow-y: auto;
   }
 }
-.tab-div{
+.tab-div {
   width: 80vw;
   margin-top: 50px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
 }
-.gallery-title{
+.gallery-title {
   text-align: center;
   margin: 0;
-  padding:50px;
-  color: #B3DAC6;
+  padding: 50px;
+  color: #b3dac6;
   font-size: 80px;
 }
-.css-1jveqvm-MuiButtonBase-root-MuiTab-root{
+.css-1jveqvm-MuiButtonBase-root-MuiTab-root {
   color: #fff;
 }
-.main-tab{
-  font-size:35px;
+.main-tab {
+  font-size: 35px;
   /* color: blue; */
 }
 
@@ -169,7 +258,7 @@ h2 {
   margin: 0 0 20px;
   font-weight: 800;
   font-size: 36px;
-  color: #333;
+  color: white;
 }
 h3 {
   font-size: 20px;
@@ -194,13 +283,13 @@ p.intro {
   line-height: 24px;
 }
 a {
-  color: #608dfd;
+  color: white;
   font-weight: 400;
 }
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #608dfd;
+  color: #b3dac6;
 }
 ul,
 ol {
@@ -355,33 +444,31 @@ a:focus,
   outline-offset: none;
 }
 /* Header Section */
-.gallery{
+.gallery {
   /* width: 100%; */
   height: 100%;
   padding: 0;
-  background: url(../img/intro-bg.png) repeat;
+  /* background: url(../img/intro-bg.png) repeat-x;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: contain;
-  -o-background-size: cover;
+  -o-background-size: cover; */
 }
 .intro {
-  
-  /* height: 100vh; */
-  width: 100%;
+  height: 100%;
   padding: 0;
-  background: url(../img/intro-bg.png);
+  /* background: url(../img/intro-bg.png) repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: contain;
-  -o-background-size: cover;
+  -o-background-size: cover; */
 }
 .intro .overlay {
   /* background: rgba(0, 0, 0, 0.2); */
 }
 .intro h1 {
   font-family: openSans;
-  color: #B3DAC6;
+  color: #b3dac6;
   font-size: 82px;
   font-weight: 700;
   /* text-transform: uppercase; */
@@ -400,11 +487,29 @@ a:focus,
   margin: 0 auto;
   /* margin-bottom: 60px; */
 }
-header .intro-text {
+.intro-text {
   padding-left: 8%;
   padding-right: 8%;
-  padding-top: 350px;
+  padding-top: 100px;
   padding-bottom: 200px;
+  text-align: left;
+}
+.intro-text.main {
+  padding-top: 300px;
+}
+.icon {
+  background-color: #000;
+  height: 150px;
+}
+.space {
+  margin-top: 20px;
+}
+.tab-button {
+  width: 100px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 15px;
+  border: none;
   text-align: left;
 }
 /* Features Section */
@@ -513,6 +618,40 @@ header .intro-text {
 #services .service-desc {
   margin-bottom: 40px;
 }
+/* Career Section */
+.form-group {
+  width: 600px;
+}
+input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  border-bottom: 0.01px solid gray;
+  overflow: hidden;
+}
+.form-item {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin: 15px 0px;
+}
+label {
+  margin-bottom: 0;
+  font-size: 20px !important;
+  width: auto;
+}
+
+.upload-btn{
+  background-color:#b3dac6;
+  color: #000;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius:10px;
+}
+
+/* Career Section */
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;

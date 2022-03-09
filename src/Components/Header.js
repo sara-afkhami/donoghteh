@@ -33,7 +33,10 @@ const Header = (props) => {
   
   <div className="nav-links">
     <HeaderLink page='header'/>
+    <HeaderLink page='contactus'/>
+    <HeaderLink page='career'/>
     <HeaderLink page='gallery'/>
+
     <button className="header-btn">contact us</button>
   </div>
 </div>

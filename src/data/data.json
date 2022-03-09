@@ -4,20 +4,17 @@
     "preParagraph": "Wherever our clients have a need, we get things moving, Welcome to Donoghteh: ",
     "paragraph": "Donoghteh is a community of talented creative thinkers, who have not forgotten the importance of taking on the hardest challenges with the best attitudes focusing on private equity and venture capital like never before in a different angle. Our teams of optimists, artists and first-movers coalesce around the needs of our clients, unlocking unique possibilities for sustainable value and lasting change."
   },
-  "About": {
+  "ThreePartPage": {
+    "title": "Title",
+    "underTitle": "Lorem ipsum dolor sit amet",
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
-    ],
-    "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
-    ]
+    "image" : "https://source.unsplash.com/2ShvY8Lf6l0/800x599"
+  },
+  "ContactUs": {
+    "title": "Contact Us",
+    "email": "Email: sdfghjwsdsdfgbnm@fghjkfcgvhbjml",
+    "phoneNumber": "Phone Number: 1233456452345667234567",
+    "address": "Address: dfghjklcvbnfdgsdfghjsdfgvbsdf ghjsdfghjfcgvhbnjfcvbhjkmdfghjkghjghj"
   },
   "Gallery": [
     {

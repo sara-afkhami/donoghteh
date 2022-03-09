@@ -1,5 +1,6 @@
-import * as React from "react";
+import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
+import Carousel, { Modal, ModalGateway } from "react-images";
 import SwipeableViews from "react-swipeable-views";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -46,13 +47,50 @@ function a11yProps(index) {
 }
 
 
-const BasicRows = () => <PhotoGallery photos={photos} /> ;
+const BasicRows = (props) => {
+
+  console.log("here "+props.photos)
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+  return (
+    <div>
+
+      <PhotoGallery photos={props.photos} onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map(x => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </div>
+  );
+
+}
 
 const theme = createTheme({
   palette: {
     type: "ligth",  
     primary: {
-      main: "#041340",
+      main: '#000',
+      opacity: 0
     },
     secondary: {
       main: "#F57365",
@@ -90,6 +128,29 @@ const AntTab = styled((props) => <Tab {...props} />)(
 const Gallery = () => {
 
   const [value, setValue] = React.useState(0);
+  const [selectedPhotos, setSelectedPhotos] = useState(photos);
+  const [selectedTags, setSelectedTags] = useState([])
+  const allTags = [];
+  let allPhotos = photos;
+  const filter= ({tag}) =>{
+    if (selectedTags.includes(tag)){
+      selectedTags.filter((value)=>value!==tag);
+    }
+    else {
+      selectedTags.push(tag);
+      selectedTags.sort();
+    }
+    setSelectedTags(selectedTags);
+    //for on tags for adding active class to buttons
+    for (let i = 0; i < allPhotos.length; i++) {
+      if (allPhotos[i].tags === selectedTags){ //each format
+        selectedPhotos.push(allPhotos[i])
+      }
+      else continue;
+      
+    }
+    setSelectedPhotos(selectedPhotos)
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -104,7 +165,7 @@ const Gallery = () => {
     <ThemeProvider theme={theme}>
     <h1 className="gallery-title">Art Works</h1>
     <Box sx={{ maxWidth: "100%", bgcolor: 'transparent' }}>
-    <AppBar position="static" elevation={0} >
+    <AppBar position="static" elevation={0}  style={{background:'rgba(0,0,0,0)'}}>
         <Tabs
           className="tabs"
           value={value}
@@ -125,7 +186,15 @@ const Gallery = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} >
-          <div className="tab-div"><BasicRows/></div>
+          <div className="tab-div">
+            <div>
+            <button className="tab-button" onClick={filter}>+logo</button>
+            <button className="tab-button" onClick={filter}>+Cl</button>
+            <button className="tab-button" onClick={filter}>+Catalog</button>
+            
+            </div>
+            <BasicRows photos={selectedPhotos} />
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1} >
           Item Two
